@@ -2,7 +2,7 @@ from prototype_1 import Prototype
 from copy import deepcopy
 
 
-class Knight(Prototype):
+class Unit(Prototype):
     def __init__(self, unit_type, level):
         self.unit_type = unit_type
         self.level = level
@@ -33,20 +33,16 @@ class Knight(Prototype):
         return deepcopy(self)
 
 
-class Archer(Knight):
-    pass
-
-
 class Barracks(object):
     def __init__(self):
         self.units = {
             "Knight": {
-                1: Knight("Knight", 1),
-                2: Knight("Knight", 2)
+                1: Unit("Knight", 1),
+                2: Unit("Knight", 2)
                 },
             "Archer": {
-                1: Archer("Archer", 1),
-                2: Archer("Archer", 2)
+                1: Unit("Archer", 1),
+                2: Unit("Archer", 2)
                 }
             }
 
